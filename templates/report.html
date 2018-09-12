@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <p class="h2">Let's check if your name has the required conditions</p>
+  <p>{{report}}, {{min}}, {{may}}, {{num}}</p>
+  {% if report %}
+        <p class="h3">Great the name has an uppercase, lowecase and final number.</p>
+  {% else %}
+  <ul>
+    {% if not min %}
+        <li>You did not use a lowe case</li>
+    {% endif %}
+
+    {% if not may %}
+        <li>You did not use an upper case</li>
+    {% endif %}
+
+    {% if not num %}
+        <li>You did not use a final number</li>
+    {% endif %}
+  </ul>
+</div>
+  {% endif %}
+{% endblock %}
